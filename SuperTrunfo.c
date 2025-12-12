@@ -24,6 +24,7 @@ int main ()
     
     printf("\nCarta 02\nInforme o Estado (A-H): "); //De A até H é o código do primeiro caractere da carta
     scanf(" %c", &estado2); //Lê o caractere digitado acima
+    getchar();
     printf("Informe o Nome da Cidade: ");
     fgets(cidade2,49,stdin); //fgets(nome da variável em que a tring ficará salva, qtd array-1, stdin=entrada do teclado);
     printf("Informe a população dessa cidade: ");
