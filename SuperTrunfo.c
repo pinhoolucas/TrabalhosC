@@ -12,11 +12,11 @@ int main ()
 {
     char estado[50], cidade[50], estado2[50], cidade2[50], codigo[5], codigo2[5]; //codigo[5] pois 'x''1''2''\n'
     int populacao, qtd_tur, populacao2, qtd_tur2, atributo;
-    float area, pib, area2, pib2;
+    float area, pib, area2, pib2, densidade, densidade2;
 
 
     //Cadastro da Carta 01
-    printf("\n---Cadastro de Cartas---\n");
+    printf("---Cadastro de Cartas---\n");
     printf("\nCarta 01\nInforme o Estado: "); 
     fgets(estado,sizeof(estado),stdin);
     printf("Informe o código da carta: ");
@@ -76,31 +76,71 @@ int main ()
     printf("PIB: %.2f\n", pib2);
     printf("Quantidade Pontos Turisticos: %d\n", qtd_tur2);
                 
-    //Escolher Atributo de Comparação
+    //Menu para Escolher Atributo de Comparação
     printf("\nEscolha Qual atributo será usado para decidir a carta vencedora: ");
     printf("\n1. População");
     printf("\n2. Area");
-    printf("\n3. PIB");
-    printf("\n4. Numero de pontos Turisticos");
-    printf("\n5. Densidade Demografica");
+    printf("\n3. Densidade Demográfica");
+    printf("\n4. PIB");
+    printf("\n5. Numero de pontos Turisticos");
     printf("\nEscolha uma opcao: ");
     scanf("%d", &atributo);
     
     switch(atributo){
         
         case 1:   if(populacao>populacao2){
-                    printf("\nA cidade %sganhou com uma populacao de %d habitantes", cidade, populacao);
+                    printf("\nA cidade %s ganhou com uma populacao de %d habitantes", cidade, populacao);
                 } else if (populacao2>populacao){
-                    printf("\nA cidade %sganhou com uma populacao de %d habitantes", cidade2, populacao2);
+                    printf("\nA cidade %s ganhou com uma populacao de %d habitantes", cidade2, populacao2);
                 } else{
                     printf("\nEmpatou! As duas cidades tem a mesma populacao.");
                 }
+                break;
+                
+        case 2:   if(area>area2){
+                    printf("\nA cidade %sganhou com uma área de %.2f KM quadrados", cidade, area);
+                } else if(area2>area){
+                    printf("\nA cidade %sganhou com uma área de %.2f KM quadrados", cidade2, area2);
+                } else{
+                    printf("\nEmpatou! As duas cidades tem a mesma área.");
+                }
+                break;
+                
+        case 3: //cálcuolo da densidade demográfica = populacao/área
         
+                densidade = populacao/area;
+                densidade2 = populacao2/area2;
+                
+                  if(densidade<densidade2){
+                    printf("\nA cidade %sganhou com uma densidade menor de %.2f habitantes por km quadrado", cidade, densidade);
+                } else if(densidade2<densidade){
+                    printf("\nA cidade %sganhou com uma densidade menor de %.2f habitantes por km quadrado", cidade2, densidade2);
+                } else{
+                    printf("\nEmpatou! As duas cidades tem a mesma densidade demográfica.");
+                }
+                break;
+                
+        case 4:   if(pib>pib2){
+                    printf("\nA cidade %sganhou com um PIB de %.2f Milhoes", cidade, pib);
+                } else if(pib2>pib){
+                    printf("\nA cidade %sganhou com um PIB de %.2f Milhoes", cidade2, pib2);
+                } else{
+                    printf("\nEmpatou! As duas cidades tem o mesmo PIB");
+                }
+                break;
+                
+        case 5:   if(qtd_tur>qtd_tur2){
+                    printf("\nA cidade %sganhou com %d pontos turisticos", cidade, qtd_tur);
+                } else if(qtd_tur2>qtd_tur){
+                    printf("\nA cidade %sganhou com %d pontos turisticos", cidade2, qtd_tur2);
+                } else{
+                    printf("\nEmpatou! As duas cidades tem o mesmo numero de pontos turisticos");
+                }
+                break;
+                
+        default: printf("Opcao Inválida");
+                
     }
-
-
-
-
 
     
     return 0;
