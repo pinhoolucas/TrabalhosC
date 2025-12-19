@@ -7,3 +7,4 @@
    4. o programa calcula e informa a carta vencedora e o valor do seu atributo escolhido
    
 Projeto criado para fins acadêmicos
+Arquivo Final: main.c
