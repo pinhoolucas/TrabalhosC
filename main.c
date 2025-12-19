@@ -6,6 +6,8 @@ Criar um MENU
 4. Sair
 */ 
 
+//teste
+
 #include <stdio.h>
 
 int main ()
