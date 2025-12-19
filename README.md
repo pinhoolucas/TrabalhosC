@@ -6,5 +6,5 @@
    3. O programa, através de um menu, pede que o usuário escolha um atributo para escolher a carta vencedora
    4. o programa calcula e informa a carta vencedora e o valor do seu atributo escolhido
    
-Projeto criado para fins acadêmicos
-Arquivo Final: main.c
+-> Projeto criado para fins acadêmicos
+-> Arquivo Final: main.c
